@@ -18,3 +18,15 @@ signal = np.concatenate(signal)
 
 fileName = input("Name your audio: ")
 wavfile.write(str(fileName + ".wav"), FS, signal)
+
+signal = []
+
+for chord in chords:
+    for i in range(4):
+        note = create_signal(random.choice(chord) * random.choice((1, 2, 1.5)), 1.25, random.choice(("sin", "triangle")))
+        signal.append(note)
+
+signal = np.concatenate(signal)
+
+fileName = input("Name your audio: ")
+wavfile.write(str(fileName + ".wav"), FS, signal)
