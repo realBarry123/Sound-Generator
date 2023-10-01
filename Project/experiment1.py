@@ -11,7 +11,7 @@ signal = []
 
 for chord in chords:
     for i in range(50):
-        note = create_signal(random.choice(chord) / 2 * random.randint(1, 7), 0.1, random.choice(("sin", "triangle")))
+        note = create_signal(random.choice(chord) / 4 * random.randint(2, 14), 0.1, random.choice(("sin", "triangle")))
         signal.append(note)
 
 signal = np.concatenate(signal)
