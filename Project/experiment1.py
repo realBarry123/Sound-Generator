@@ -15,9 +15,7 @@ for chord in chords:
         signal.append(note)
 
 signal = np.concatenate(signal)
-
-fileName = input("Name your audio: ")
-wavfile.write(str(fileName + ".wav"), FS, signal)
+wavfile.write(str("melody.wav"), FS, signal)
 
 signal = []
 
@@ -29,4 +27,16 @@ for chord in chords:
 signal = np.concatenate(signal)
 
 fileName = input("Name your audio: ")
-wavfile.write(str(fileName + ".wav"), FS, signal)
+wavfile.write(str("chords.wav"), FS, signal)
+
+signal = []
+
+for chord in chords:
+    for i in range(10):
+        note = create_signal(random.choice(chord)/2 * random.choice((1, 1.5)), 0.5, "sin")
+        signal.append(note)
+
+signal = np.concatenate(signal)
+
+fileName = input("Name your audio: ")
+wavfile.write(str("bass.wav"), FS, signal)
