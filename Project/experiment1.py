@@ -7,7 +7,7 @@ chords = [[261.63, 327.04],[196, 245],[220, 264],[174.61, 209.53]]
 
 FS = 44100
 
-for i in range(input("Number of repetitions: ")):
+for i in range(int(input("Number of repetitions: "))):
 
 # chords
 
@@ -21,7 +21,7 @@ for i in range(input("Number of repetitions: ")):
     signal = np.concatenate(signal)
     combined = signal * 0.04 / np.max(signal)
 
-# melody
+    # melody
     for j in range(2):
         signal = []
 
