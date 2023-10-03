@@ -26,7 +26,7 @@ for i in range(int(input("Number of repetitions: "))):
         signal = []
 
         for chord in chords:
-            for k in range(4):
+            for k in range(4): # I'm sorry Mr. P
                 note = create_signal(random.choice(chord) * random.choice((1, 2, 1.5)), 1.25, "triangle")
                 signal.append(note)
 

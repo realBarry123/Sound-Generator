@@ -2,10 +2,12 @@
 import numpy as np
 import random
 from scipy.io import wavfile
-from create_signal import create_signal
+from create_signal import create_signal, rotate_signal
 
 # sample rate
 FS = 44100
+
+print(rotate_signal([1, 2, 3, 4, 3, 2, 1], 2.5))
 
 print("Would you like to: \n[1] Generate Wav File\n[2] Create Random Music")
 choice = input(">>> ")
