@@ -1,7 +1,7 @@
 import numpy as np
 import random
 from scipy.io import wavfile
-from create_signal import create_signal
+from create_signal import create_signal, concat_signal
 
 chords = [[261.63, 327.04],[196, 245],[220, 264],[174.61, 209.53]]
 
@@ -19,6 +19,7 @@ for i in range(int(input("Number of repetitions: "))):
             signal.append(note)
 
     signal = np.concatenate(signal)
+
     combined = signal * 0.04 / np.max(signal)
 
     # melody

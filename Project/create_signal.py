@@ -32,17 +32,18 @@ def create_signal(_freq, _dur, _type):
 
 def rotate_signal(_sig, target):
     while True:
-        if _sig[-1] < target < _sig[0] or _sig[0] < target < _sig[-1]:
+        if _sig[-1] <= target <= _sig[0] or _sig[0] <= target <= _sig[-1]:
             return _sig
         else:
-            np.append(_sig,_sig[0])
+            _sig = np.append(_sig,_sig[0])
             _sig = _sig[1:]
 
 
 def concat_signal(_sig1, _sig2):
     return np.concatenate((_sig1, rotate_signal(_sig2, _sig1[-1])))
 
-sig1 = create_signal(440, 3, "sin")
-sig2 = create_signal(550, 3, "triangle")
+
+sig1 = create_signal(440, 1, "sin")
+sig2 = create_signal(440, 1, "sin")
 
 wavfile.write(str("test.wav"), FS, concat_signal(sig1, sig2))
